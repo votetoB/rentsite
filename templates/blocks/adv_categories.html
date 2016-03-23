@@ -1,0 +1,8 @@
+<div class="row categories_block">
+    {% for adv_category in advcat_list %}
+        <a class="adv_category" href="{% url 'adv:category' adv_category.slug %}">
+            {% if adv_category.image %}<img height="30px" width="30px" src="{{ adv_category.image.url }}" class="adv_category_img">{% endif %}
+            {{ adv_category }}
+        </a>
+    {% endfor %}
+</div>

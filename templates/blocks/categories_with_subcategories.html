@@ -1,0 +1,14 @@
+<div class="row grid">
+    {% for adv_category in advcat_list %}
+        <div class="col-md-3 col-sm-4 grid_element">
+            {% if adv_category.image %}
+                <img src="{{ adv_category.image.url }}" class="adv_category_img">
+            {% endif %}
+            <a href="{% url 'adv:category' adv_category.slug %}" class="adv_category">{{ adv_category }}</a>
+            {% for adv_subcat in adv_category.get_subcategories %}
+                <div class="adv_subcategory">{{ adv_subcat }}</div>
+                {% if forloop.last %}<br>{% endif %}
+            {% endfor %}
+        </div>
+    {% endfor %}
+</div>
