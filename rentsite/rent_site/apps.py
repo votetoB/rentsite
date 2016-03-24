@@ -4,4 +4,4 @@ from django.apps import AppConfig
 
 
 class RentSiteConfig(AppConfig):
-    name = 'rent_site'
+    name = 'rentsite.rent_site'
