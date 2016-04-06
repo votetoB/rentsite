@@ -103,12 +103,15 @@ MANAGERS = ADMINS
 # ------------------------------------------------------------------------------
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#databases
 DATABASES = {
-    # Raises ImproperlyConfigured exception if DATABASE_URL not in os.environ
-    'default': env.db("DATABASE_URL", default="postgres:///rentsite"),
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'rentsite',
+        'USER': 'rentsiteuser',
+        'PASSWORD': 'qwerty',
+        'HOST': 'localhost',
+        'PORT': '',
+    }
 }
-DATABASES['default']['ATOMIC_REQUESTS'] = True
-DATABASES['default']['USER'] = 'postgres'
-DATABASES['default']['PASSWORD'] = 'qwerty'
 
 
 # GENERAL CONFIGURATION
@@ -127,6 +130,7 @@ SITE_ID = 1
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#use-i18n
 USE_I18N = True
+
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#use-l10n
 USE_L10N = True

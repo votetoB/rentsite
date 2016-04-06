@@ -1,10 +1,33 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Places</title>
-</head>
-<body>
+{% extends "base.html" %}
 
-</body>
-</html>
+{% load staticfiles %}
+
+{% block content %}
+    <script type="text/javascript">
+        coords_from_django = {{ coords | safe }};
+    </script>
+
+    <div class="col-md-6" id="MyMap"></div>
+    <div class="col-md-offset-1 col-md-5 center-block">
+        <table class="table-bordered table-hover">
+            {% for row in the_place %}
+                {% if row.1 != 'None' %}
+                <tr>
+                    <td>{{ row.0 }}</td>
+                    <td>{{ row.1 }}</td>
+                </tr>
+                {% endif %}
+            {% endfor %}
+        </table>
+    </div>
+{% endblock %}
+
+
+{% block bottom %}
+    <script src="{% static 'js/place.js' %}"></script>
+
+    {% if http404 == 'true' %}
+        {% include 'blocks/http.404_modal.html' %}
+    {% endif %}
+{% endblock %}
+

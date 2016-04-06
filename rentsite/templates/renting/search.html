@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% block content %}
+    <div class="search container">
+        {% csrf_token %}
+        <div class="row" id="checkboxes">
+            {% for field, options in search_checkboxes.items %}
+                <div class="col-md-3">
+                        <div class="dropdown checkbox">
+                            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ options.0 }}
+                            </button>
+                            <div class="dropdown-menu" id="{{ field }}" aria-labelledby="dropdownMenu1">
+                              {% for option in options.1 %}
+                                  {% if option != None %}
+                                <a class="dropdown-item" href="#">
+                                  <label class="checkbox">
+                                    <input type="checkbox" class="" contenteditable="false">{{ option }}
+                                  </label>
+                                </a>
+                                  {% endif %}
+                              {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+            {% endfor %}
+        </div>
+        <div class="row" id="sliders">
+                {% for field, options in search_sliders.items %}
+                <div class="col-md-6 slider">
+                    <b>{{ options.0 }}</b>
+                    <input id="{{ field }}" type="text" class="span2" value="" data-slider-min="{{ options.1.0 }}"
+                           data-slider-max="{{ options.1.1 }}" data-slider-step="1" data-slider-value="{{ options.1 }}"/>
+
+                </div>
+                {% endfor %}
+        </div>
+        <div class="row">
+            <div class="col-md-3 col-md-offset-6"><button class="btn btn-success">Искать</button></div></div>
+    </div>
+    <div class="h2">Результаты:</div>
+    <div class="results container">
+    {% for place in results %}
+        <div class="col-md-4">
+            {% include 'renting/place_mini.html' %}
+        </div>
+    {% endfor %}
+    </div>
+
+{% endblock %}
+
+
+{% block bottom %}
+    <link rel="stylesheet" href="{% static 'css/slider.css' %}">
+    <script src="{% static 'js/search.js' %}"></script>
+    <script src="{% static 'js/bootstrap-slider.js' %}"></script>
+
+
+    {% if http404 == 'true' %}
+        {% include 'blocks/http.404_modal.html' %}
+    {% endif %}
+{% endblock %}

@@ -1,0 +1,35 @@
+
+
+.navbar-nav li {
+  line-height: 45px; }
+
+.vertical-center {
+  display: flex;
+  align-items: center; }
+
+.m-b {
+  height: 80px; }
+
+
+div.label-default {
+  font-size: larger;
+  margin-bottom: 10px; }
+
+.image_scroll {
+  height: 400px;
+  overflow: scroll; }
+
+.image_scroll > img {
+  width: 1152px; }
+
+
+button.btn {
+  border: 1px solid black; }
+
+#YMapsID {
+  height: 400px;
+}
+
+button#dropdownMenu1{
+  margin: 5% 1%;
+}

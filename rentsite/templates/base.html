@@ -1,6 +1,6 @@
 {% load staticfiles i18n %}
 <!DOCTYPE html>
-<html lang="en" ng-app>
+<html lang="en">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -14,19 +14,19 @@
       <script src="https://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
 
-{#    {% block css %}#}
-{#    <!-- Latest compiled and minified CSS -->#}
-{#    <link rel="stylesheet" href="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/css/bootstrap.css">#}
+    {% block css %}
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/css/bootstrap.css">
 
     <!-- Your stuff: Third-party css libraries go here -->
 
-{#    <!-- This file store project specific CSS -->#}
-{#    <link href="{% static 'css/project.css' %}" rel="stylesheet">#}
-{#    {% endblock %}#}
-
-    {% block angular %}
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <!-- This file store project specific CSS -->
+    <link href="{% static 'css/project.css' %}" rel="stylesheet">
     {% endblock %}
+
+{#    {% block angular %}#}
+{#    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>#}
+{#    {% endblock %}#}
     <!-- Begin Cookie Consent plugin by Silktide - http://silktide.com/cookieconsent -->
     <script type="text/javascript">
         window.cookieconsent_options = {"message":"This website uses cookies to ensure you get the best experience on our website","dismiss":"Got it!","learnMore":"More info","link":null,"theme":"dark-bottom"};
@@ -40,7 +40,7 @@
     <div class="m-b">
       <nav class="navbar navbar-dark navbar-fixed-top bg-inverse">
         <div class="container">
-          <a class="navbar-brand" href="/" title="affiliates directory">
+          <a class="navbar-brand" href="/" title="Rent site">
               <img style="max-width:100px;" src="{% static 'images/logo.png' %}">
           </a>
           <button type="button" class="navbar-toggler hidden-sm-up pull-xs-right" data-toggle="collapse" data-target="#bs-navbar-collapse-1">
@@ -51,14 +51,17 @@
           <div class="collapse navbar-toggleable-xs" id="bs-navbar-collapse-1">
             <ul class="nav navbar-nav">
               <li class="nav-item">
-                <a class="nav-link" href="{% url 'rent:home' %}">Home</a>
+                <a class="nav-link" href="{% url 'rent:home' %}">Главная</a>
               </li>
-{#              <li class="nav-item">#}
-{#                <a class="nav-link" href="{% url 'about' %}">About</a>#}
-{#              </li>#}
-{#              <li class="nav-item">#}
-{#                <a class="nav-link" href="{% url 'rent:categories' %}">Categories</a>#}
-{#              </li>#}
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'rent:search' %}">Аренда</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'rent:about' %}">Про сайт</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'rent:faq' %}">Частые вопросы</a>
+              </li>
             </ul>
 
             <ul class="nav navbar-nav pull-xs-right vertical-center">
@@ -100,7 +103,10 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/masonry/3.3.2/masonry.pkgd.min.js"></script>
 
         <!-- place project specific Javascript in this file -->
-        <script src="{% static 'js/project.js' %}"></script>
+
+
+        <script src="http://api-maps.yandex.ru/2.1/?lang=ru_RU"></script>
+
     {% endblock javascript %}
 
     {% block bottom %}{% endblock %}

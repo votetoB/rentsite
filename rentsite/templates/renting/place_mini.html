@@ -1,0 +1,7 @@
+<section>
+    <a class="container place_mini" href="{% url 'rent:rent' place.slug %}">
+        <div class="price">${{ place.price }}</div>
+        <div class="street">{{ place.street }}, <span class="building>">{{ place.building }}</span></div>
+        <div class="type">{{ place.type }}</div>
+    </a>
+</section>

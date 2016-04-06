@@ -1,13 +1,8 @@
 {% extends "base.html" %}
 
-{% block content %}
-    {% include 'blocks/categories_with_subcategories.html' %}
-{% endblock %}
-
-
 {% block bottom %}
     {% if http404 == 'true' %}
-        {% include 'blocks/http404_modal.html' %}
+        {% include 'blocks/http.404_modal.html' %}
     {% endif %}
 {% endblock %}
 
