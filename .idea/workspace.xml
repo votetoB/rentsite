@@ -1,23 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f7e8d9b1-37c2-4184-b37f-d51d119b74b7" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/1.xlsx" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rentsite/templates/pages/contacts.html" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/compose/django/entrypoint.sh" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/compose/django/gunicorn.sh" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/compose/nginx/Dockerfile" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/compose/nginx/nginx.conf" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dictionaries/votetob.xml" afterPath="$PROJECT_DIR$/.idea/dictionaries/votetob.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/settings/common.py" afterPath="$PROJECT_DIR$/config/settings/common.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rentsite/rent_site/models.py" afterPath="$PROJECT_DIR$/rentsite/rent_site/models.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rentsite/rent_site/urls.py" afterPath="$PROJECT_DIR$/rentsite/rent_site/urls.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rentsite/rent_site/views.py" afterPath="$PROJECT_DIR$/rentsite/rent_site/views.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rentsite/templates/base.html" afterPath="$PROJECT_DIR$/rentsite/templates/base.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rentsite/templates/pages/home.html" afterPath="$PROJECT_DIR$/rentsite/templates/pages/home.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rentsite/templates/renting/places.html" afterPath="$PROJECT_DIR$/rentsite/templates/renting/places.html" />
-    </list>
+    <list default="true" id="f7e8d9b1-37c2-4184-b37f-d51d119b74b7" name="Default" comment="" />
     <ignored path="rentsite.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />

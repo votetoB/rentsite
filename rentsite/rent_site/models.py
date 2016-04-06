@@ -27,7 +27,7 @@ class Place(models.Model):
     # House or apartment
     type = models.CharField(max_length=75, verbose_name="Тип")
 
-    image = models.ImageField(upload_to='rentsite/', verbose_name="Изображение",  blank=True, null=True)
+    ## image = models.ImageField(upload_to='rentsite/', verbose_name="Изображение",  blank=True, null=True)
     slug = models.SlugField(unique=True)
     description = models.TextField(max_length=1000, verbose_name="Описание",  blank=True, null=True)
 
