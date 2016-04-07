@@ -19,6 +19,8 @@ env = environ.Env()
 
 # APP CONFIGURATION
 # ------------------------------------------------------------------------------
+SECRET_KEY = 'xixbe-hmy$ui91#c+6n616$qirxz#f$vpaosp8m2jwi+7a%5%k'
+
 DJANGO_APPS = (
     # Default Django apps:
     'django.contrib.auth',
