@@ -33,7 +33,6 @@ def search_view(request):
     if request.is_ajax():
         query = dict(request.POST.iterlists())
 
-        print query
 
         for key, val in query.items():
             if key[:-2] in Place._CHECKBOXES:
@@ -42,7 +41,6 @@ def search_view(request):
                 range = [int(x) for x in query.pop(key)[0].split(',')]
                 query[key + '__range'] = range
 
-        print query
 
         result = Place.objects.filter(**query)
 
@@ -58,3 +56,22 @@ def search_view(request):
         'search_sliders': search_sliders,
         'results': Place.objects.all()
     })
+
+
+def map_search_view(request):
+    if request.is_ajax():
+        polygon = request.POST.getlist('polygon[]')
+        polygon = [[float(y) for y in x.split(',')] for x in polygon]
+        print polygon
+
+        result = Place.objects.all()
+
+        response = list()
+        for r in result:
+            if r.lies_into_polygon(polygon):
+                response.append(r.get_thumbnail_fields_list())
+
+
+        return HttpResponse(json.dumps(response), content_type='json')
+
+    return render(request, 'renting/map_search.html')

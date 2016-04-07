@@ -26,8 +26,9 @@ div.label-default {
 button.btn {
   border: 1px solid black; }
 
-#YMapsID {
-  height: 400px;
+#MyMap {
+  height: 500px;
+  width: 500px;
 }
 
 button#dropdownMenu1{

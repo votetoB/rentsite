@@ -19,6 +19,7 @@ urlpatterns = [
     url(r'^about/$', TemplateView.as_view(template_name='pages/about.html'), name="about"),
     url(r'^faq/$', TemplateView.as_view(template_name='pages/faq.html'), name="faq"),
     url(r'^contacts/$', TemplateView.as_view(template_name='pages/contacts.html'), name="contacts"),
-    url(r'^search/$', view = views.search_view, name="search"),
+    url(r'^search/$', view= views.search_view, name="search"),
+    url(r'^map_search/$', view=views.map_search_view, name="map-search")
 
 ]
